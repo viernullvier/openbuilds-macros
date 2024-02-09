@@ -1,0 +1,11 @@
+{
+  "title": "Select last used port",
+  "icon": "far fa-eye-slash",
+  "codetype": "javascript",
+  "gcode": "",
+  "javascript": "window._origPopulatePortsMenu = window._origPopulatePortsMenu || populatePortsMenu\n\nwindow._selectLastPort = () => {\n  const lastPort = localStorage.getItem('lastPort') || ''\n  if ($(`#portUSB option[value=\"${lastPort}\"]`).length) {\n    $(\"#portUSB\").data(\"select\").val(lastPort);\n  }\n}\n\nwindow.populatePortsMenu = () => {\n  const laststatus = window['laststatus']\n  let prevValue\n  if (!laststatus?.comms.interfaces.networkDevices.length) {\n    const lastIP = localStorage.getItem('lastip')\n    if (lastIP && laststatus) {\n      prevValue = laststatus.comms.interfaces.networkDevices\n      laststatus.comms.interfaces.networkDevices = [{\n        ip: lastIP,\n        type: 'last known',\n        banner: ''\n      }]\n    } \n  }\n  _origPopulatePortsMenu()\n  if (!laststatus?.comms.interfaces.activePort) {\n    window._selectLastPort()\n  }\n  if (prevValue) {\n    laststatus.comms.interfaces.networkDevices = prevValue\n  }\n}\n\nwindow._origSetConnectBar = window._origSetConnectBar || setConnectBar\n\nwindow.setConnectBar = (val, status) => {\n  _origSetConnectBar(val, status)\n  if (val !== 0 && status.comms.interfaces.activePort) {\n    localStorage.setItem('lastPort', status.comms.interfaces.activePort)\n  }\n}\n",
+  "class": "",
+  "tooltip": "",
+  "macrokeyboardshortcut": "",
+  "jsrunonstartup": true
+}
