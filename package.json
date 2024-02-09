@@ -8,11 +8,10 @@
   "author": "viernullvier <1492179+viernullvier@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "build": "node index.js",
-    "add-all": "git add */*.json"
+    "build": "node index.js"
   },
   "devDependencies": {
     "pre-commit": "^1.2.2"
   },
-  "pre-commit": ["build", "add-all"]
+  "pre-commit": ["build"]
 }
