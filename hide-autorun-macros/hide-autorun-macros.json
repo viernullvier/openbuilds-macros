@@ -1,0 +1,11 @@
+{
+  "title": "Hide autorun macros",
+  "icon": "far fa-eye-slash",
+  "codetype": "javascript",
+  "gcode": "",
+  "javascript": "window._origPMB = window._origPMB || populateMacroButtons\nconst toggleBtn = $(`<label><input type=\"checkbox\" id=\"toggleHidden\" onchange=\"autorunMacros.toggle($('#toggleHidden').prop('checked'))\"/> Show all</label>`);\nwindow.populateMacroButtons = () => {\n  window._origPMB()\n  window.autorunMacros = $(':contains(\"js:autorun\")').parents('.macrobtn').add($('#macros .command-button.rounded'))\n\n  $(\"#macros\").append(toggleBtn)\n  autorunMacros.toggle($('#toggleHidden').prop('checked'))\n\n}\n\nsetTimeout(populateMacroButtons, 100)\n",
+  "class": "",
+  "tooltip": "",
+  "macrokeyboardshortcut": "",
+  "jsrunonstartup": true
+}
