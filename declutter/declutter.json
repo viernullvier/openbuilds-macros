@@ -1,0 +1,11 @@
+{
+  "title": "Declutter UI",
+  "icon": "far fa-eye-slash",
+  "codetype": "javascript",
+  "gcode": "",
+  "javascript": "$('#splash').fadeOut(500)\n$('#section-jog .group:first-child').hide()\n$('#ddThemeButton').parent().hide()\n",
+  "class": "",
+  "tooltip": "",
+  "macrokeyboardshortcut": "",
+  "jsrunonstartup": true
+}
