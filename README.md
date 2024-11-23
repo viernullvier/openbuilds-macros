@@ -22,7 +22,7 @@ Run `yarn install` to set up a pre-commit hook that runs the build script automa
 Here are more macros that I've found useful:
 
 - [Hole Milling](https://github.com/poWer4aiX/ob-hole-milling-macro) by @poWer4aiX
-- [Linear Cut](https://github.com/poWer4aiX/ob-linear-cut-macro) by @poWer4aiX
+- [Linear Cut](https://github.com/poWer4aiX/ob-linear-cut-macro) by @poWer4aiX - this repo now includes its own version of it.
 - [Laser Test Pattern](https://openbuilds.com/threads/getting-started-with-javascript-macros-in-control-library-of-macros-created-by-the-community.15880/#post-134467) by Misterg [TODO: Add my modified version to this repo after cleaning it up and creating a UI]
 
 Make sure to check out the [OpenBuilds forum macro thread](https://openbuilds.com/threads/getting-started-with-javascript-macros-in-control-library-of-macros-created-by-the-community.15880/)!
